@@ -3,6 +3,8 @@ from constants import *
 
 def main():
     pygame.init()
+    game_clock = pygame.time.Clock()
+    dt = 0
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}\nScreen height: {SCREEN_HEIGHT}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -12,6 +14,7 @@ def main():
                 return
         screen.fill((0 , 0, 0))
         pygame.display.flip()
+        dt = game_clock.tick(60)
 
 if __name__ == "__main__":
     main()
